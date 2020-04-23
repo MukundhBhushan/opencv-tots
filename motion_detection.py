@@ -14,7 +14,7 @@ ret, frame1 = cap.read()
 ret, frame2 = cap.read()
 print(frame1.shape)
 while cap.isOpened():
-    diff = cv2.absdiff(frame1, frame2) #finding the bs difference between frames
+    diff = cv2.absdiff(frame1, frame2) #finding the abs difference between frames
     gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY) #converting RBG to gray
     blur = cv2.GaussianBlur(gray, (5,5), 0) #blur to soften the edges (5,5): kurnel size; 0:sigmax
     _, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY) #setting the tresholds
